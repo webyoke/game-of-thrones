@@ -1,0 +1,17 @@
+{% extends "_layout.html" %}
+
+{% set bgImage = "/img/art/tumblr_ne6qgitaXJ1qjvigio2_1280.jpg" %}
+
+{% block content %}
+    <h1 class='text-center'>{{ entry.title }}</h1>
+
+    {% set books = enact.entry.sectionHandle('books').fetch %}
+
+    <ul class='book-covers'>
+    {% for book in books %}
+        <li><a href='{{ book.url }}'>{{ book.bookCover.assetFieldHandle[0].getImgHtml() }}</a></li>
+    {% endfor %}
+    </ul>
+
+    {{ entry.body }}
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends "_layout.html" %}
+
+{% set bgImage = "/img/art/tumblr_ne6qgitaXJ1qjvigio2_1280.jpg" %}
+
+{% block content %}
+
+<div class='body row'>
+
+    <div class='row collapse'>
+        <div class='small-12 medium-9 column'>
+            <h1>{{ entry.title }}</h1>
+            <ul class='descriptions'>
+                <li><b>Pubished:</b> {{ entry.publishedOn }}</li>
+                <li><b>Chapters:</b> {{ entry.numberOfChapters}}</li>
+                <li><b>Pages:</b> {{ entry.numberOfPages}}</li>
+            </ul>
+        </div>
+        <div class='small-12 medium-3 column'>
+            <div class='book-cover'>
+                {{ entry.bookCover.assetFieldHandle[0].getImgHtml }}
+            </div>
+        </div>
+    </div>
+
+
+    {{ entry.summary }}
+
+    {% set chars = enact.entry.sectionHandle('family').atDepth(1).fetch %}
+
+    <hr>
+
+    <h2>Characters POV in {{ entry.title }}</h2>
+    <div class='character-list'>
+    {% for char in chars %}
+        {% for story in char.storylines.matrixFieldHandle %}
+            {% for book in story.book.entryFieldHandle %}
+                {% if book.id == entry.id and story.chaptersWithPointOfView != '0' %}
+                    <a href='{{ char.url }}' class='character'>
+                        <div class='headshot'>
+                            {{ char.headshot.assetFieldHandle[0].getImgHtml }}
+                            <div class='name'>{{ char.title }}</div>
+                        </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    {% endfor %}
+    </div>
+
+
+    {% macro printBook(book) %}
+         <a href='{{ book.url }}'>
+            <div class='cover'>
+                {{ book.bookCover.assetFieldHandle[0].getImgHtml }}
+            </div>
+            {{ book.title }}
+        </a>
+    {% endmacro %}
+
+    {% import _self as util %}
+
+    {% set prev = entry.getPrevEntry() %}
+    {% set next = entry.getNextEntry() %}
+
+    <hr>
+
+    <div class='row collapse book-nav text-center'>
+        <div class='small-6 columns'>
+            {% if prev %}
+                <h5>Previous</h5>
+                <div><<<</div>
+                {{ util.printBook(prev) }}
+            {% endif %}
+        </div>
+        <div class='small-6 columns'>
+            {% if next %}
+                <h5>Next</h5>
+                <div>>>></div>
+                {{ util.printBook(next) }}
+            {% endif %}
+        </div>
+    </div>
+
+
+</div>
+
+    
+{% endblock %}

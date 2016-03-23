@@ -1,0 +1,19 @@
+{% extends "_layout.html" %}
+
+{% set bgImage = "/img/art/tumblr_o2aawoHCDR1sh566ao1_1280.jpg" %}
+
+{% block content %}
+
+    <h1 class='primary-title'>Resources</h1>
+
+    {% for resource in entry.resource.matrixFieldHandle %}
+        {% if resource.handle == 'resource' %}
+            <div class='resource'>
+                <h2>{{ resource.title }}</h2>
+                <a href='{{ resource.link }}' href='_blank'>{{ resource.link}}</a>
+                <p>{{ resource.description }}</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}

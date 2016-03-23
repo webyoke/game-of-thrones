@@ -1,0 +1,20 @@
+{
+    "name": "Instagram Enact CMS Plugin",
+    "description": "enact cms plugin for Instagram",
+    "license": "Apache License V2",
+    "authors": [
+        {
+            "name": "Bradley Hamilton",
+            "email": "bradleygoskimmin@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+    },
+    "autoload": {
+        "classmap":[
+            "app/"
+        ]
+    }
+
+}

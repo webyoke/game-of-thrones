@@ -1,0 +1,23 @@
+{% extends "_layout.html" %}
+
+{% set bgImage = "/img/art/tumblr_ne6qgitaXJ1qjvigio3_1280.jpg" %}
+
+{% block content %}
+<div class='body row'>
+
+    {% set houses = enact.entry.sectionHandle('family').atDepth(0).fetch %}
+
+    <h1 class='primary-title'>The houses of GoT</h1>
+
+    <div class='houses-list'>
+    {% for house in houses %}
+        <a class='house' href='{{ house.url }}'>
+            {{ house.houseSigil.assetFieldHandle[0].getImgHtml }}
+            <p class='heading'>{{ house.title }}</p>
+        </a>
+    {% endfor %}
+    </div>
+
+</div>
+{% endblock %}
+

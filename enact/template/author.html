@@ -1,0 +1,17 @@
+{% extends "_layout.html" %}
+
+{% set bgImage = "/img/art/tumblr_o2aawoHCDR1sh566ao1_1280.jpg" %}
+
+{% block content %}
+
+    <div class='row collapse body'>
+        <h1 class='primary-title'>{{ entry.title }}</h1>
+        
+        <div class='text-center'>
+            {{ entry.image.assetFieldHandle[0].getImgHtml }} 
+        </div>
+
+        {{ entry.body }}
+    </div>
+
+{% endblock %}

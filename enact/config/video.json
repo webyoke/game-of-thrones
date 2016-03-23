@@ -1,0 +1,30 @@
+{
+
+    "attributes" : {
+        "frameborder" : "0",
+        "allowfullscreen" : "true",
+        "width" : 500,
+        "height": 209
+    },
+
+    "providers" : [
+
+        {
+            "name" : "Youtube",
+            "iframe_url" : "https://www.youtube.com/embed/{video_id}",
+            "id_regex"   : "youtube.com/watch\\?v=([a-zA-Z0-9-_]+)",
+            "attributes" : {
+            }
+        },
+
+        {
+            "name" : "Vimeo",
+            "iframe_url" : "https://player.vimeo.com/video/{video_id}",
+            "id_regex"   : "vimeo.com/([0-9]+)",
+            "attributes" : {
+            }
+        }
+
+    ]
+
+}

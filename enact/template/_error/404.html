@@ -1,0 +1,11 @@
+{% extends '_layout.html' %}
+
+{% do enact.view.title('404 Page Not Found | ' ~ enact.siteName) %}
+
+{% block content %}
+    <div class='text-center'>
+        <h1>404 Page Not Found</h1>
+        <p>It is dangerous to wander north of the wall... perhaps you should head back <a href='/'>home</a></p>
+        <img src='/resource/img/404.jpg'/>
+    </div>
+{% endblock %}

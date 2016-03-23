@@ -1,0 +1,9 @@
+{% extends "_layout.html" %}
+
+{% set bgImage = "/img/art/tumblr_ne6qgitaXJ1qjvigio1_1280.jpg" %}
+
+{% block content %}
+    <h1 class='primary-title'>{{ entry.title }}</h1>
+    {{ entry.video.fullWidth }}
+    {{ entry.body }}
+{% endblock %}

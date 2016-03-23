@@ -1,0 +1,98 @@
+{% extends "_layout.html" %}
+
+{% set bgImage = "/img/art/tumblr_ne6qgitaXJ1qjvigio3_1280.jpg" %}
+
+{% block content %}
+
+<div class='body row'>
+
+    {% if entry.layout == 'family' %}
+
+        <h1 class='primary-title'>{{ entry.title }}</h1>
+
+        <div style='margin-bottom:5%;' class='clearfix'>
+            <div class='house-sigil'>
+                {{ entry.houseSigil.assetFieldHandle[0].getImgHtml }}
+            </div>
+            {{ entry.description }}
+        </div>
+
+        {% set children = entry.getChildEntries.fetch %}
+
+        <h2 class='primary-title'>Members of the House</h2>
+
+        <div class='character-list'>
+        {% for child in children %}
+            <a href='{{ child.url }}' class='character'>
+                <div class='headshot'>
+                    {{ child.headshot.assetFieldHandle[0].getImgHtml }}
+                    <div class='name'>{{ child.title }}</div>
+                </div>
+            </a>
+        {% endfor %}
+        </div>
+
+    {% elseif entry.layout == 'person' %}
+
+        {% set parent = entry.getParentEntry() %}
+
+        <div class='house-member'>
+
+            <div class='row collapse'>
+                <div class='small-12 medium-9 columns'>
+                    <h1>{{ entry.title }} of {{ parent.title }}</h1>
+                </div>
+                <div class='small-12 medium-3 columns house-detail'>
+                    <a href='{{ parent.url }}'>{{ parent.houseSigil.assetFieldHandle[0].getImgHtml }}</a>
+                </div>
+            </div>
+
+            <div class='single-headshot'>
+                {{ entry.headshot.assetFieldHandle[0].getImgHtml }}
+            </div>
+
+            {{ entry.description }}
+
+            <h2 class='primary-title'>{{ entry.title }} Plot Summaries by Novel</h2>
+
+            <div class='storylines'>
+            {% for story in  entry.storylines.matrixFieldHandle %}
+                <div class='row collapse storyline'>
+                    <div class='small-9 columns'>
+                        <h2>{{ story.book.entryFieldHandle[0].title }}</h2>
+                        {{ story.summary }}
+                    </div>
+                    <div class='small-3 columns text-center'>
+                        <div class='pov-label'>{{ story.chaptersWithPointOfView }} POV chapters</div>
+                        <a class='book-cover' href='{{ story.book.entryFieldHandle[0].url }}'>
+                            {{ story.book.entryFieldHandle[0].bookCover.assetFieldHandle[0].getImgHtml }}
+                        </a>
+                    </div>
+
+                </div>
+            {% endfor %}
+            </div>
+
+        </div>
+
+        {% set siblings = entry.getSiblingEntries.fetch %}
+
+        <h2 class='primary-title'>Relatives</h2>
+
+        <div class='character-list'>
+        {% for sibling in siblings %}
+            <a href='{{ sibling.url }}' class='character'>
+                <div class='headshot'>
+                    {{ sibling.headshot.assetFieldHandle[0].getImgHtml }}
+                    <div class='name'>{{ sibling.title }}</div>
+                </div>
+            </a>
+        {% endfor %}
+        </div>
+
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

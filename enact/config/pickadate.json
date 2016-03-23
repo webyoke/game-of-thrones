@@ -1,0 +1,20 @@
+{
+
+    "date_formats" : [
+        "ddd, mmm dd, yyyy",
+        "mm/dd/yyyy",
+        "m/d/yyyy",
+        "m/d/yy",
+        "mmmm d, yyyy"
+    ],
+
+    "time_formats" : [
+        "h:i A",
+        "h:i a",
+        "h A",
+        "h a",
+        "HH:i",
+        "HH"
+    ]
+
+}

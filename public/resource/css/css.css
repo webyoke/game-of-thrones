@@ -1,0 +1,228 @@
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text);
+@font-face {
+  font-family: 'got';
+  src: url("/resource/font/got-webfont/game_of_thrones-webfont.eot");
+  src: url("/resource/font/got-webfont/game_of_thrones-webfont.eot?#iefix") format("embedded-opentype"), url("/resource/font/got-webfont/game_of_thrones-webfont.woff2") format("woff2"), url("/resource/font/got-webfont/game_of_thrones-webfont.woff") format("woff"), url("/resource/font/got-webfont/game_of_thrones-webfont.ttf") format("truetype"), url("/resource/font/got-webfont/game_of_thrones-webfont.svg#game_of_thronesregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+body {
+  background-color: #FFF;
+  color: #1C1D21;
+  font-family: 'Crimson Text',sans-serif; }
+
+a {
+  color: #445878; }
+
+a:hover {
+  color: #31353D; }
+
+h1, h2, h3, h4, h5, h6, .heading {
+  font-family: 'got',sans-serif; }
+
+h1 {
+  font-size: 1.8em; }
+
+h2 {
+  font-size: 1.4em; }
+
+h3, h4, h5, h6 {
+  font-size: 1.2em; }
+
+.bg-image {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  overflow: hidden;
+  top: 0; }
+  .bg-image .layer {
+    background-color: rgba(34, 34, 34, 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: -8;
+    position: absolute; }
+  .bg-image img {
+    z-index: -9;
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0; }
+
+.content-con {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0; }
+  .content-con .menu {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 7%;
+    background-color: rgba(0, 0, 0, 0.95);
+    height: 100%;
+    text-align: center;
+    padding-top: 4%; }
+    .content-con .menu > a {
+      height: 15%;
+      display: block;
+      color: #FCFCFC; }
+      .content-con .menu > a .icon {
+        font-size: 1.6em; }
+      .content-con .menu > a.active, .content-con .menu > a:hover {
+        color: #FF6058; }
+  .content-con .content-holder {
+    width: 93%;
+    margin-left: 7%; }
+    .content-con .content-holder .content {
+      width: 60%;
+      margin: 2.5% auto;
+      background-color: rgba(250, 250, 250, 0.98);
+      padding: 2.5%;
+      border-radius: 3px; }
+      .content-con .content-holder .content .primary-title {
+        text-align: center;
+        padding-bottom: 2.5%;
+        border-bottom: 1px solid #FF6058;
+        margin-bottom: 2.5%; }
+
+.book-covers {
+  list-style: outside none;
+  text-align: center; }
+  .book-covers li {
+    display: inline-block;
+    margin: 0px 4px; }
+    .book-covers li img {
+      height: 215px;
+      width: auto; }
+
+.book-cover {
+  text-align: right; }
+  .book-cover img {
+    max-height: 215px; }
+
+.book-nav .cover img {
+  max-height: 180px; }
+
+ul.descriptions {
+  list-style: none;
+  margin: 0px;
+  font-size: 1.1em; }
+  ul.descriptions li {
+    background-color: #92CDCF;
+    padding: 8px;
+    border-radius: 4px;
+    margin: 4px;
+    color: #1C1D21; }
+
+.character-list {
+  width: 100%;
+  position: relative;
+  display: block; }
+  .character-list .character {
+    display: inline-block;
+    margin-right: .5%;
+    margin-bottom: 2.5%; }
+    .character-list .character .headshot {
+      position: relative;
+      width: 100%;
+      display: block; }
+      .character-list .character .headshot img {
+        max-height: 140px;
+        width: auto;
+        border-radius: 8px; }
+      .character-list .character .headshot .name {
+        background-color: rgba(250, 250, 250, 0.8);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 2px;
+        text-align: center;
+        border-radius: 0px 0px 8px 8px; }
+
+.house-sigil {
+  float: right;
+  margin-left: 20px; }
+  .house-sigil img {
+    max-height: 340px; }
+
+.house-member h1 {
+  margin-top: 30px; }
+.house-member .single-headshot {
+  text-align: center;
+  margin: 2.5% 0%; }
+.house-member .house-detail {
+  text-align: right; }
+  .house-member .house-detail img {
+    max-height: 100px; }
+
+.houses-list .house {
+  display: inline-block;
+  padding: 10px;
+  text-align: center; }
+  .houses-list .house img {
+    max-height: 240px; }
+
+.storylines {
+  margin: 5% 0%; }
+  .storylines .storyline {
+    border-bottom: 1px solid #445878;
+    padding-bottom: 2.5%;
+    margin-bottom: 2.5% !important; }
+    .storylines .storyline .pov-label {
+      background-color: #31353D;
+      color: #FCFCFC;
+      display: inline-block;
+      padding: 8px;
+      margin-bottom: 8px;
+      border-radius: 3px; }
+    .storylines .storyline:last-child {
+      border-bottom: none; }
+
+.art-con .art {
+  background-color: rgba(250, 250, 250, 0.9);
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  display: inline-block;
+  position: relative;
+  max-width: 100%; }
+  .art-con .art img {
+    max-height: 500px;
+    width: auto;
+    cursor: pointer;
+    display: block;
+    max-width: 100%; }
+  .art-con .art .author {
+    margin-top: 8px;
+    font-size: 1.4em;
+    color: #31353D; }
+
+.resource {
+  border-bottom: 1px solid #445878;
+  margin-bottom: 2.5%;
+  padding-bottom: 2.5%; }
+  .resource h2 {
+    font-size: 1.2em; }
+
+@media screen and (max-width: 40em) {
+  .content-con .menu {
+    height: 8%;
+    width: 100%;
+    padding-top: 1%; }
+    .content-con .menu > a {
+      width: 15%;
+      display: inline-block; }
+      .content-con .menu > a .icon {
+        font-size: 1em; }
+  .content-con .content-holder {
+    width: 100%;
+    margin-left: 0%;
+    margin-top: 14%; }
+    .content-con .content-holder .content {
+      width: 95%;
+      margin: 2.5% auto;
+      padding: 2.5%; } }
+
+/*# sourceMappingURL=css.css.map */

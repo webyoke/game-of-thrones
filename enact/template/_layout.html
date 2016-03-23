@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8' />
+        <meta content='index,follow' name='robots'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        {{ enact.view.styleSrc( cpSlug('resource/css/foundation.min.css') ) }}
+        {{ enact.view.styleSrc('/resource/css/open-iconic-foundation.min.css') }}
+        {{ enact.view.styleSrc('/resource/css/css.css') }}
+
+        <title>{{ enact.view.title }}</title>
+
+    </head>
+    <body> 
+
+        {% if bgImage %}
+            <div class='bg-image'>
+                <div class='layer'></div>
+                <img src='{{ bgImage }}'/>
+            </div>
+        {% endif %}
+
+        <div class='content-con'>
+            <div class='menu'>
+                <a href='/' title='Game of Thrones Homepage'>
+                    <div class='fi-home icon'></div>
+                    <span class='heading'>GoT</span>
+                </a>
+                <a href='/author' title='George RR Martin, Author of A Song of Ice and Fire (Game of Thrones)'>
+                    <div class='fi-person icon'></div>
+                    <span>Author</span>
+                </a>
+                <a href='/books/'>
+                    <div class='fi-book icon'></div>
+                    <span>Books</span>
+                </a>
+                <a href='/house/'>
+                    <div class='fi-people icon'></div>
+                    <span>Houses</span>
+                </a>
+                <a href='/art'>
+                    <div class='fi-image icon'></div>
+                    <span>Art</span>
+                </a>
+                <a href='/resources'>
+                    <div class='fi-flag icon'></div>
+                    <span>Resources</span>
+                </a>
+            </div>
+            <div class='content-holder'>
+                <div class='content'>
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+        {{ enact.view.scriptSrc('https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js') }}
+        {{ enact.view.scriptSrc('/resource/js/foundation.min.js') }}
+        {{ enact.view.scriptSrc('/resource/js/modernizr.js') }}
+        {{ enact.view.scriptSrc('/resource/js/js.js') }}
+
+    </body>
+</html>

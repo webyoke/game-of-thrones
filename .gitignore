@@ -1,0 +1,4 @@
+enact/app
+log/
+enact/storage/.license.key
+enact/storage/.pigeon.info

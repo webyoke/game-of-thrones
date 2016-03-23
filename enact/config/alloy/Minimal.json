@@ -1,0 +1,5 @@
+{
+    "ckeditorFilter"    : "p b i u strike strong",
+    "add_buttons"       : [],
+    "selection_buttons" : ["bold","italic","underline","strike"]
+}

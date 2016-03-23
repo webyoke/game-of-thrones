@@ -1,0 +1,51 @@
+{
+
+    "ckeditorFilter"    : "p b i u strike ul ol li strong; a[!href]",
+    "add_buttons"       : ["richtext_asset","hline","table"],
+    "selection_buttons" : [
+        {
+            "name" : "styles",
+            "cfg" : {
+                "styles" : [
+                    {
+                        "name" : "H1",
+                        "style" : { "element" : "h1" }
+                    },
+                    {
+                        "name" : "H2",
+                        "style" : { "element" : "h2" }
+                    },
+                    {
+                        "name" : "H3",
+                        "style" : { "element" : "h3" }
+                    },
+                    {
+                        "name" : "H4",
+                        "style" : { "element" : "h4" }
+                    },
+                    {
+                        "name" : "H5",
+                        "style" : { "element" : "h5" }
+                    },
+                    {
+                        "name" : "H6",
+                        "style" : { "element" : "h6" }
+                    },
+                    {
+                        "name" : "pre (formatted)",
+                        "style" : { "element" : "pre" }
+                    },
+                    {
+                        "name" : "cite",
+                        "style" : { "element" : "cite" }
+                    },
+                    {
+                        "name" : "code",
+                        "style" : { "element" : "code" }
+                    }
+                ]
+            }
+        },
+        "richtext_link","link","bold","italic","underline","strike","ul","ol","quote","paragraphLeft","paragraphCenter","paragraphRight","removeFormat"
+    ]
+}

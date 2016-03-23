@@ -1,0 +1,27 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+
+    <h1 class='primary-title'>{{ entry.title }}</h1>
+
+    <div class='art-con row clearfix'>
+    {% for asset in entry.art.assetFieldHandle %}
+        <div class='art'>
+            {{ asset.getImgHtml }}
+            {% set author = asset.getEntry.imageArtist.tagFieldHandle[0].getEntry %}
+            <div class='author heading'>{{ author.name }}</div>
+            <a class='website' href='{{ author.website }}' target='_blank'>{{ author.website }}</a>
+        </div>
+    {% endfor %}
+    </div>
+
+    <div class='reveal-modal' data-reveal id='art-modal'>
+        <img id='current-art'/>
+        <a class='close-reveal-modal'>&#215;</a>
+    </div>
+
+    {% script %}
+        Art.mount();
+    {% endscript %}
+
+{% endblock %}
