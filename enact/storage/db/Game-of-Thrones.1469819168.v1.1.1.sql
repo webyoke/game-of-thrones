@@ -3,7 +3,7 @@
 -- Host: localhost	Database: GAMEOFTHRONES
 -- ------------------------------------------------------
 -- Server version 	5.5.47-0+deb8u1
--- Date: Tue, 22 Mar 2016 15:08:50 -0400
+-- Date: Fri, 29 Jul 2016 15:06:08 -0400
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -20,6 +20,7 @@
 -- Table structure for table `enact_asset`
 --
 
+DROP TABLE IF EXISTS `enact_asset`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_asset` (
@@ -33,7 +34,7 @@ CREATE TABLE `enact_asset` (
   `file_size_int` int(11) NOT NULL,
   `extension` varchar(5) NOT NULL,
   `type` varchar(12) NOT NULL,
-  `last_modified` datetime NOT NULL,
+  `last_modified` datetime DEFAULT NULL,
   `created_on` datetime NOT NULL,
   `entry_id` int(11) DEFAULT NULL,
   `width` int(11) DEFAULT NULL,
@@ -60,6 +61,7 @@ COMMIT;
 -- Table structure for table `enact_asset_group`
 --
 
+DROP TABLE IF EXISTS `enact_asset_group`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_asset_group` (
@@ -91,6 +93,7 @@ COMMIT;
 -- Table structure for table `enact_config_setting`
 --
 
+DROP TABLE IF EXISTS `enact_config_setting`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_config_setting` (
@@ -108,7 +111,7 @@ CREATE TABLE `enact_config_setting` (
 LOCK TABLES `enact_config_setting` WRITE;
 /*!40000 ALTER TABLE `enact_config_setting` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `enact_config_setting` VALUES (1,'siteName','Game of Thrones'),(2,'siteLogo','20'),(3,'email',NULL),(7,'siteIcon','50'),(8,'disqus.shortcode','enacttest'),(9,'enactCurrentVersion','1');
+INSERT INTO `enact_config_setting` VALUES (1,'siteName','Game of Thrones'),(2,'siteLogo','20'),(3,'email',NULL),(7,'siteIcon','50'),(8,'disqus.shortcode','enacttest'),(9,'enactCurrentVersion','1.1.1');
 /*!40000 ALTER TABLE `enact_config_setting` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -117,6 +120,7 @@ COMMIT;
 -- Table structure for table `enact_email_message`
 --
 
+DROP TABLE IF EXISTS `enact_email_message`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_email_message` (
@@ -146,6 +150,7 @@ COMMIT;
 -- Table structure for table `enact_entry`
 --
 
+DROP TABLE IF EXISTS `enact_entry`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_entry` (
@@ -191,6 +196,7 @@ COMMIT;
 -- Table structure for table `enact_entry_field`
 --
 
+DROP TABLE IF EXISTS `enact_entry_field`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_entry_field` (
@@ -226,6 +232,7 @@ COMMIT;
 -- Table structure for table `enact_entry_field_value`
 --
 
+DROP TABLE IF EXISTS `enact_entry_field_value`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_entry_field_value` (
@@ -257,6 +264,7 @@ COMMIT;
 -- Table structure for table `enact_entry_field_value_version`
 --
 
+DROP TABLE IF EXISTS `enact_entry_field_value_version`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_entry_field_value_version` (
@@ -289,6 +297,7 @@ COMMIT;
 -- Table structure for table `enact_entry_field_version`
 --
 
+DROP TABLE IF EXISTS `enact_entry_field_version`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_entry_field_version` (
@@ -325,6 +334,7 @@ COMMIT;
 -- Table structure for table `enact_entry_version`
 --
 
+DROP TABLE IF EXISTS `enact_entry_version`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_entry_version` (
@@ -360,6 +370,7 @@ COMMIT;
 -- Table structure for table `enact_field`
 --
 
+DROP TABLE IF EXISTS `enact_field`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_field` (
@@ -394,6 +405,7 @@ COMMIT;
 -- Table structure for table `enact_field_group`
 --
 
+DROP TABLE IF EXISTS `enact_field_group`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_field_group` (
@@ -425,12 +437,13 @@ COMMIT;
 -- Table structure for table `enact_plugin`
 --
 
+DROP TABLE IF EXISTS `enact_plugin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_plugin` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
-  `version` varchar(8) NOT NULL,
+  `version` varchar(15) NOT NULL,
   `installed_on` datetime NOT NULL,
   `dir` varchar(80) NOT NULL,
   PRIMARY KEY (`id`)
@@ -453,6 +466,7 @@ COMMIT;
 -- Table structure for table `enact_record_test`
 --
 
+DROP TABLE IF EXISTS `enact_record_test`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_record_test` (
@@ -480,6 +494,7 @@ COMMIT;
 -- Table structure for table `enact_redirect`
 --
 
+DROP TABLE IF EXISTS `enact_redirect`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_redirect` (
@@ -510,6 +525,7 @@ COMMIT;
 -- Table structure for table `enact_route`
 --
 
+DROP TABLE IF EXISTS `enact_route`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_route` (
@@ -542,6 +558,7 @@ COMMIT;
 -- Table structure for table `enact_section`
 --
 
+DROP TABLE IF EXISTS `enact_section`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_section` (
@@ -578,6 +595,7 @@ COMMIT;
 -- Table structure for table `enact_section_type`
 --
 
+DROP TABLE IF EXISTS `enact_section_type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_section_type` (
@@ -588,7 +606,7 @@ CREATE TABLE `enact_section_type` (
   PRIMARY KEY (`id`),
   KEY `stf_section_id_idx` (`section_id`),
   CONSTRAINT `stf_section_id` FOREIGN KEY (`section_id`) REFERENCES `enact_section` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -607,6 +625,7 @@ COMMIT;
 -- Table structure for table `enact_section_type_field`
 --
 
+DROP TABLE IF EXISTS `enact_section_type_field`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_section_type_field` (
@@ -638,6 +657,7 @@ COMMIT;
 -- Table structure for table `enact_section_type_field_group`
 --
 
+DROP TABLE IF EXISTS `enact_section_type_field_group`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_section_type_field_group` (
@@ -667,6 +687,7 @@ COMMIT;
 -- Table structure for table `enact_tag`
 --
 
+DROP TABLE IF EXISTS `enact_tag`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_tag` (
@@ -700,6 +721,7 @@ COMMIT;
 -- Table structure for table `enact_user`
 --
 
+DROP TABLE IF EXISTS `enact_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_user` (
@@ -711,6 +733,7 @@ CREATE TABLE `enact_user` (
   `handle` varchar(190) NOT NULL,
   `email` varchar(120) NOT NULL,
   `password` varchar(180) DEFAULT NULL,
+  `password_salt` char(128) DEFAULT NULL,
   `created` datetime NOT NULL,
   `last_access` datetime DEFAULT NULL,
   `admin` tinyint(1) DEFAULT '0',
@@ -732,7 +755,7 @@ CREATE TABLE `enact_user` (
 LOCK TABLES `enact_user` WRITE;
 /*!40000 ALTER TABLE `enact_user` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `enact_user` VALUES (1,NULL,NULL,'Admin','admin','admin','test@email.com','3005a76db94035442682e548080f56699fcc7a36feb95f8a1c54ea16fe4f53749c6e2c7970cb46072d884eb60cbdead3a3c41a7a96234baf242c57b3edfd6927','2015-09-18 12:37:17','2016-03-22 15:08:50',1,NULL,NULL,NULL,'2015-11-13 16:06:56');
+INSERT INTO `enact_user` VALUES (1,NULL,NULL,'Admin','admin','admin','brad@bradleyhamilton.com','d178677eda76d4b8d12a6968ff6be4519c673e083af9e79492048b8b43af45a1b0cbbac0b4f4105472ab2f4180f5e2285b7672bb982e314860da2772b64cb9ed','15cc45ac1a296511a27c7b612e679daab1893bba5eb4eb125093a77dff20c87ae400330ff09440c0fb7dcee093c7489abaa5494eb96488414d201f5375edeab5','2015-09-18 12:37:17','2016-07-29 13:17:32',1,NULL,NULL,NULL,'2015-11-13 16:06:56');
 /*!40000 ALTER TABLE `enact_user` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -741,6 +764,7 @@ COMMIT;
 -- Table structure for table `enact_user_login_token`
 --
 
+DROP TABLE IF EXISTS `enact_user_login_token`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_user_login_token` (
@@ -758,9 +782,22 @@ CREATE TABLE `enact_user_login_token` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `enact_user_login_token`
+--
+
+LOCK TABLES `enact_user_login_token` WRITE;
+/*!40000 ALTER TABLE `enact_user_login_token` DISABLE KEYS */;
+SET autocommit=0;
+INSERT INTO `enact_user_login_token` VALUES (7,1,0x3A93E0CBD3EFE13776B6C327C07D3C69066C8E974483E9C57988E59A48C621ECD68DC275E30F1B2D8EBB54403B0AB64519B4C61595C96586189D5B589D99F6E4D17B1CF756992F01F8ABEF37C796A06F51900317E70EF331B4108ACB965C17FE9A371F4B9A4FCF249DFA095A9FD5ACD2774C932E07E4F7CD3F110EC867ED4F14,'::1','2015-12-15 14:09:18','2015-12-17 18:43:58','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/47.0.2526.73 Chrome/47.0.2526.73 Safari/537.36'),(8,1,0xD33673B6AC12869885BDE999505D3443DA506AFC4234691754194FC03E3DF9A2DA06CF54475FD775677C7ADB51BFE9D0522896289424B4ACEF313DDD4B470E9949880C54388F6521186BFFE501B26BFD677BE1E7DE5044CE2F731741CAC041EDDD4022CD9C128224BF39A84DFF4986C3734D8F20AB01D4075E11EB972FB86CD2,'127.0.0.1','2016-03-21 12:40:29','2016-03-22 09:36:46','Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0');
+/*!40000 ALTER TABLE `enact_user_login_token` ENABLE KEYS */;
+UNLOCK TABLES;
+COMMIT;
+
+--
 -- Table structure for table `enact_user_token`
 --
 
+DROP TABLE IF EXISTS `enact_user_token`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_user_token` (
@@ -776,9 +813,22 @@ CREATE TABLE `enact_user_token` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `enact_user_token`
+--
+
+LOCK TABLES `enact_user_token` WRITE;
+/*!40000 ALTER TABLE `enact_user_token` DISABLE KEYS */;
+SET autocommit=0;
+INSERT INTO `enact_user_token` VALUES (3,1,'password','078e9b7efa0b7ab73b42653cc0eddda4b1fde1c426b8670850e716a022bb9d412ff9f777a7a5e9ad0ea5a6dd20190da904b57c955c89ddfe6c0e3e700112b4f7','2016-02-22 18:56:27','2016-02-24 18:56:27');
+/*!40000 ALTER TABLE `enact_user_token` ENABLE KEYS */;
+UNLOCK TABLES;
+COMMIT;
+
+--
 -- Table structure for table `enact_widget`
 --
 
+DROP TABLE IF EXISTS `enact_widget`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enact_widget` (
@@ -814,4 +864,4 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on: Tue, 22 Mar 2016 15:08:51 -0400
+-- Dump completed on: Fri, 29 Jul 2016 15:06:08 -0400
