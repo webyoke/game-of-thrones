@@ -3,7 +3,7 @@
 -- Host: localhost	Database: GAMEOFTHRONES
 -- ------------------------------------------------------
 -- Server version 	5.5.47-0+deb8u1
--- Date: Fri, 29 Jul 2016 15:06:08 -0400
+-- Date: Fri, 29 Jul 2016 15:24:10 -0400
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -457,7 +457,7 @@ CREATE TABLE `enact_plugin` (
 LOCK TABLES `enact_plugin` WRITE;
 /*!40000 ALTER TABLE `enact_plugin` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `enact_plugin` VALUES (1,'Disqus','1','2015-11-03 14:00:47','disqus');
+INSERT INTO `enact_plugin` VALUES (1,'Disqus','1.0.0','2015-11-03 14:00:47','disqus');
 /*!40000 ALTER TABLE `enact_plugin` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -755,7 +755,7 @@ CREATE TABLE `enact_user` (
 LOCK TABLES `enact_user` WRITE;
 /*!40000 ALTER TABLE `enact_user` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `enact_user` VALUES (1,NULL,NULL,'Admin','admin','admin','brad@bradleyhamilton.com','d178677eda76d4b8d12a6968ff6be4519c673e083af9e79492048b8b43af45a1b0cbbac0b4f4105472ab2f4180f5e2285b7672bb982e314860da2772b64cb9ed','15cc45ac1a296511a27c7b612e679daab1893bba5eb4eb125093a77dff20c87ae400330ff09440c0fb7dcee093c7489abaa5494eb96488414d201f5375edeab5','2015-09-18 12:37:17','2016-07-29 13:17:32',1,NULL,NULL,NULL,'2015-11-13 16:06:56');
+INSERT INTO `enact_user` VALUES (1,NULL,NULL,'Admin','admin','admin','support@webyoke.com','d178677eda76d4b8d12a6968ff6be4519c673e083af9e79492048b8b43af45a1b0cbbac0b4f4105472ab2f4180f5e2285b7672bb982e314860da2772b64cb9ed','15cc45ac1a296511a27c7b612e679daab1893bba5eb4eb125093a77dff20c87ae400330ff09440c0fb7dcee093c7489abaa5494eb96488414d201f5375edeab5','2015-09-18 12:37:17','2016-07-29 15:16:48',1,NULL,NULL,NULL,'2015-11-13 16:06:56');
 /*!40000 ALTER TABLE `enact_user` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -864,4 +864,4 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on: Fri, 29 Jul 2016 15:06:08 -0400
+-- Dump completed on: Fri, 29 Jul 2016 15:24:10 -0400
