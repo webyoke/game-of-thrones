@@ -1,43 +1,29 @@
 <?php
-namespace Disqus\field;
+namespace Disqus;
 
-class Comments extends \Enact\template\wrapper\BaseFieldWrapper {
+class Template {
 
 
 
     public function __toString(){
-        return $this->commentsHtml(); 
+        return $this->commentsHtml();    
     }//__toString
 
 
 
-    public function areTurnedOn(){
-        return $this->field['field_value'] == 'on';
-    }//areTurnedOn
-
-
-
     public function commentsHtml(){
-
         return $this->render('@disqus/comments');
-
     }//commentsHtml
 
 
 
     public function commentsCount(){
-
         return $this->render('@disqus/comment-count-link');
-       
     }//commentsCount
 
 
 
     public function render($template){
-
-        if(!$this->areTurnedOn()){
-            return '';
-        }//if
 
         $shortcode = \DisqusPlugin::instance()->getSiteShortCode();
 
@@ -45,9 +31,11 @@ class Comments extends \Enact\template\wrapper\BaseFieldWrapper {
             return '<div>In order to use disqus you need to <a href="' . \DisqusPlugin::instance()->configUri() . '">set up your configuration</a></div>';
         }//if
 
+        $id = \Request::path();
+
         return \Template::build($template, Array(
-            'id'        => $this->entry['id'],
-            'url'       => $this->entry['url'],
+            'id'        => $id,
+            'url'       => $id,
             'shortcode' => $shortcode
         ));
        
@@ -55,5 +43,4 @@ class Comments extends \Enact\template\wrapper\BaseFieldWrapper {
 
 
 
-
-}//Comments
+}//Template

@@ -18,7 +18,7 @@ class Disqus {
         $data = json_encode($data);
 
         \View::script("
-            React.render(React.createElement(Enact.react_class.DisqusConfig,{$data}),document.getElementById('disqus'));
+            ReactDOM.render(React.createElement(Enact.react_class.DisqusConfig,{$data}),document.getElementById('disqus'));
         ");
 
     }//getIndex

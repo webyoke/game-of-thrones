@@ -6,22 +6,34 @@ class DisqusPlugin extends \Enact\Plugin {
     const SHORTCODE_CONFIG = 'disqus.shortcode';
 
 
+    private static $shortcode = false;
+
+
+
     public function name(){
         return 'Disqus';
     }//name
 
 
 
-    public function author(){
-        return 'webyoke.com';
-    }//author
+    public function creator(){
+        return 'WebYoke';
+    }//creator
 
+
+    public function website(){
+        return 'http://webyoke.com';
+    }//website
 
 
     public function version(){
         return 1.0;
     }//version
 
+
+    public function githubLink(){
+        return 'https://github.com/webyoke/enact-cms-disqus-plugin';
+    }//githubLink
 
 
     public function onInstall(){
@@ -48,8 +60,14 @@ class DisqusPlugin extends \Enact\Plugin {
     }//templatePath
 
 
+
+    public function template(){
+        return new \Disqus\Template;
+    }//template
+
+
     public function configUri(){
-        return '/admin/plugin/disqus';
+        return enact_cpSlug('/plugin/disqus');
     }//configUri
 
 
@@ -57,19 +75,7 @@ class DisqusPlugin extends \Enact\Plugin {
     public function fields(){
 
         return Array(
-
-            'Disqus Comments' => Array(
-
-                'options_assets' => Array(
-                    '/js/jsx/CommentsFieldOptions.js'
-                ),
-
-                'assets' => Array(
-                    '/js/jsx/CommentsField.js'
-                ),
-
-                'class' => 'Disqus\field\Comments'
-            )
+            new Disqus\field\CommentsDefinition,
         );
 
     }//fields
@@ -78,10 +84,22 @@ class DisqusPlugin extends \Enact\Plugin {
 
     public function privateRoutes(){
 
-        \Router::get('/admin/plugin/disqus','Disqus\controller\Disqus@getIndex');
-        \Router::post('/admin/plugin/disqus','Disqus\controller\Disqus@postIndex');
+        \Router::get($this->configUri(),'Disqus\controller\Disqus@getIndex');
+        \Router::post($this->configUri(),'Disqus\controller\Disqus@postIndex');
 
     }//privateRoutes
+
+
+
+    public function getSiteShortCode(){
+
+        if(self::$shortcode === false){
+            self::$shortcode = enact()->with('ConfigSetting')->setting(self::SHORTCODE_CONFIG);
+        }//if
+
+        return self::$shortcode;
+
+    }//getSiteShortCode
 
 
 

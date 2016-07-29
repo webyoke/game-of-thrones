@@ -25,7 +25,7 @@ class __TwigTemplate_e90ffd37df4403555e827335acc12df956d97c62eac7a4977483d4245f8
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         ";
         // line 7
-        echo $this->getAttribute($this->getAttribute((isset($context["enact"]) ? $context["enact"] : null), "view", array()), "styleSrc", array(0 => enact_cpSlug("resource/css/foundation.min.css")), "method");
+        echo $this->getAttribute($this->getAttribute((isset($context["enact"]) ? $context["enact"] : null), "view", array()), "styleSrc", array(0 => "/resource/css/foundation.min.css"), "method");
         echo "
         ";
         // line 8
@@ -146,7 +146,7 @@ class __TwigTemplate_e90ffd37df4403555e827335acc12df956d97c62eac7a4977483d4245f8
 /*         <meta charset='utf-8' />*/
 /*         <meta content='index,follow' name='robots'>*/
 /*         <meta name='viewport' content='width=device-width, initial-scale=1.0' />*/
-/*         {{ enact.view.styleSrc( cpSlug('resource/css/foundation.min.css') ) }}*/
+/*         {{ enact.view.styleSrc('/resource/css/foundation.min.css') }}*/
 /*         {{ enact.view.styleSrc('/resource/css/open-iconic-foundation.min.css') }}*/
 /*         {{ enact.view.styleSrc('/resource/css/css.css') }}*/
 /* */
